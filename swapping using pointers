@@ -1,0 +1,34 @@
+#include <stdio.h>
+#define len 5 //define macro as len and its value is 5
+int main()
+{
+    int arr[len],sum=0; //declaring an array and sum and initialize sum as zero
+    int *ptr=arr;//dcelaring and initializing pointer which holds array base address
+    for(int i=0;i<len;i++)//for loop to scan the array elements
+    {
+        scanf("%d",ptr+i);
+    }
+    printf("before swapping:");
+    for(int i=0;i<len;i++){ //for loop to print the array elements before swapping
+        printf(" %d ",*(ptr+i));
+    }
+    for(int i=0;i<len/2;i++) //for loop for swapping the elements
+    {
+        int temp; //declaring a temp variable of int type
+        temp=ptr[i];//in temp it stores the value present in ptr[i]
+        ptr[i]=ptr[len-(i+1)];//in ptr[i] it stores the value present at ptr[len-(i+1)]
+        ptr[len-(i+1)]=temp;//in ptr[len-(i+1)] stores the value present at temp
+    }
+    printf("\n after swapping:");
+    for(int i=0;i<len;i++) //for loop to print array elements after swapping
+    {
+        printf(" %d ",*(ptr+i));
+    }
+    return 0;
+}
+
+output:
+
+2 4 3 1 7
+before swapping: 2  4  3  1  7 
+ after swapping: 7  1  3  4  2 
