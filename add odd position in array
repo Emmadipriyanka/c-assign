@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define len 5 //define macro as len its value is 5
+int main()
+{
+    int arr[len],sum=0; // initializing array lenth and sum=0
+    int* ptr=arr; // assigning arry base value to pointer variable ptr
+    for(int i=0;i<len;i++) // loop to scan values
+    {
+        scanf("%d",ptr+i); // ptr+1 will incriment value by 1
+        //scanf("%d",arr+i);
+        //scanf("%d",&(arr[i]);
+    }
+    for(int i=0;i<len;i++) // loop to print array values
+    {
+        printf(" %d  ",*(ptr+i)); //*(ptr+i) will first incriment ptr(base value) value and using derefernce it prints the value at incremented position  ptr address 
+    }
+    for(int i=0;i<len;i++) // loop to print sum of odd positions
+    {
+        if(i%2 !=0) // as (i%2!=0) gives the odd number if stisfies then is odd position
+        {
+            sum=sum+(*(ptr+i)); //sum of odd positions
+        }
+    }
+    printf("\n sum = %d \n",sum); //print sum of odd positions
+    return 0;
+}
+
+output:  
+
+1 3 2 5 4
+ 1   3   2   5   4  
+ sum = 8 
