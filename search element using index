@@ -13,7 +13,7 @@ int main()
     int found=0;//declaring found variable as an integer with and assigned it's value as zero
     scanf("%c",&search);//enter element that you want to search
     //enter the element which you want to search
-    for(int i=0;i<10;i++)
+    for(int i=0;i<5;i++)
     {
         if(s[i]==search)
         {
