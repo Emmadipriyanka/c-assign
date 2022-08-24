@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+
+    char s[10]={'p','r','o','g','r','a','m','i','n','c'};
+  //declaring a character array of size 10 with 10 characters
+    char search;
+  //declaring search variable  as a character
+    int position=0;  //declaring position variable as an integer with and assigned it's value as zero
+    scanf("%c",&search);
+    //enter the element which you want to search
+    for(int i=0;i<10;i++)
+    {
+        if(s[i]==search)
+        {
+            position=i; //position stores the value of i(index value)
+            printf("element found at position %d\n",position);
+        }
+    }
+}
+
+
+output:
+
+r
+element found at position 1
+element found at position 4
