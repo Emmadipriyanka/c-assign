@@ -1,0 +1,31 @@
+#include<stdio.h>
+#define yes 1//define macro as yes whose value is 1
+#define no 0 //define macro as no whose value is 0
+int main()
+{
+    char s[5]={'p','r','i','y','a'};//declaring a character array of size 10 with 10 characters
+    char search;//declaring character array
+    char *ptr=&search;//declaring pointer and initialize with address of search
+    int position=0,found=0;//declaring position variable as an integer with and assigned it's value as zero
+                            //declaring found variable as an integer with and assigned it's value as zero
+    printf("enter element to be search:");
+    scanf("%c",&search);//enter the element to be search
+    for(int i=0;i<5;i++)
+    {
+        if(s[i]==*ptr)
+        {
+            found=yes;//found stores the 1
+            position=i; //position stores the value of i(index value)
+            break;
+        }
+    }
+    (found==yes)?printf("element found at position %d",position):printf("element not found");//ternary operator
+}
+
+output:
+case 1:
+enter element to be search:j
+element not found
+case 2:
+enter element to be search:a
+element found at position 4
