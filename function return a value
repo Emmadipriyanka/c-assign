@@ -1,0 +1,21 @@
+#include<stdio.h>
+int sum(int ,int);//prototype of a sum function and it return some value
+int main()
+{
+    /*int result;//declaration of a result as a integer
+    result=sum(10,20);//calling sum function by passing values as 10,20
+    printf("sum of 2 numbers is: %d",result);*///printing the result
+    printf("sum of 2 numbers is: %d",sum(10,20));//printing the value 
+    return 0;
+}
+int sum(int a,int b)
+{
+    return(a+b);//it returns the sum of two numbers
+    /*int temp;//declaring the temp variable
+    temp=a+b;//temp stores the sum of 2 numbers value
+    return temp;*///returing the temp value
+}
+
+output:
+
+sum of 2 numbers is: 30
