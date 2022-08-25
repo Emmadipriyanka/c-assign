@@ -1,0 +1,40 @@
+#include<stdio.h>
+//int sum_arr_addr(int []);//function declaration with return type and array as parameter
+int sum_arr_ptr(int *);//function declaration with return type and arraypointer as a parameter
+#define len 7//macro as len which holds value as 7
+int main()
+{
+    int arr[len],i,count;//declaration of array with len and i and count as integer
+    printf("enter array elements:");
+    for(i=0;i<len;i++)//for loop to scan array elements 
+    {
+        scanf("%d",arr+i);
+    }
+    /*count=sum_arr_addr(arr);//calling a fun by passing array as a parameter
+    printf("sum of array elements: %d",count);*/
+    count=sum_arr_ptr(arr);//calling a fun by passing array as a parameter
+    printf("sum of array elements: %d",count);
+}
+/*int sum_arr_addr(int x[])
+{
+    int sum=0,i;
+    for(int i=0;i<len;i++)
+    {
+        sum=sum+x[i];
+    }
+    return sum;
+}*/
+int sum_arr_ptr(int *y)
+{
+    int sum=0,i;
+    for(int i=0;i<len;i++)
+    {
+        sum=sum+y[i];
+    }
+    return sum;
+}
+
+output:
+
+enter array elements:1 2 3 4 5 6 7
+sum of array elements: 28
