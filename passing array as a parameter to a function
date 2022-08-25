@@ -1,0 +1,52 @@
+#include<stdio.h>
+void reverse_arr(int []);
+void print_rev_arr(int []);
+#define len 6
+int main()
+{
+    int arr[len],i;
+    printf("enter array elements:");
+    for(i=0;i<len;i++)
+    {
+        scanf("%d",arr+i);
+    }
+    printf("array elements before reverse:");
+    for(int i=0;i<len;i++)
+    {
+        printf("%d \t",arr[i]);
+    }
+    reverse_arr(arr);
+    print_rev_arr(arr);
+}
+void reverse_arr(int x[])
+{
+    int temp,i;
+    for(int i=0;i<len/2;i++)
+    {
+        temp=x[i];
+        x[i]=x[len-(i+1)];
+        x[len-(i+1)]=temp;
+    }
+}
+void print_rev_arr(int y[])
+{
+    printf("\narray elements after reverse :");
+    for(int i=0;i<len;i++)
+    {
+        printf("%d \t",y[i]);
+    }
+}
+
+output:
+
+case 1: len=6
+
+enter array elements:1 2 3 4 5 6
+array elements before reverse:1         2       3       4       5       6 
+array elements after reverse :6         5       4       3       2       1 
+
+case 2: len=7
+
+enter array elements:1 2 3 4 5 6 7
+array elements before reverse:1         2       3       4       5       6       7 
+array elements after reverse :7         6       5       4       3       2       1 
