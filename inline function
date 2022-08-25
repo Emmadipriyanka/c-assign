@@ -1,0 +1,37 @@
+#include<stdio.h>
+inline int sum(int x,int y)//inline function by using the inline keyword before the function
+{
+    return(x+y);
+}
+int main()
+{
+    printf("sum of 2 numbers is %d",sum(10,20));
+    return 0;
+}
+
+output:
+
+/usr/bin/ld: /tmp/ccA4Hr7J.o: in function `main':
+main.c:(.text+0x13): undefined reference to `sum'
+collect2: error: ld returned 1 exit status
+
+
+
+
+
+
+#include<stdio.h>
+static inline int sum(int x,int y)//by using static keyword we can rectify the error because the static keyword force the compiler to consider the fun as the line function
+{
+    return(x+y);
+}
+int main()
+{
+    printf("sum of 2 numbers is %d",sum(10,20));
+    return 0;
+}
+
+output: 
+
+sum of 2 numbers is 30
+
