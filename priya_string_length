@@ -4,7 +4,7 @@ int main()
 {
     char s1[100];
     printf("enter string:");
-    scanf("%s",s1);
+    scanf("%[^\n]s",s1);
     int len=priya_strlen(s1);
     printf("length of the string is %d",len);
 }
@@ -22,5 +22,6 @@ int priya_strlen(char *p)
 
 output:
 
-enter string:priyanka
-length of the string is 8
+
+enter string:this is a c program
+length of the string is 19
