@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+   char src[50] = "priyanka";
+   char dest[50]="hanish";
+   printf("Before memcpy dest = %s\n", dest);
+   memcpy(dest, src,sizeof(src));
+   printf("After memcpy dest = %s\n", dest);
+   return 0;
+}
+
+output:
+
+Before memcpy dest = hanish
+After memcpy dest = priyanka
