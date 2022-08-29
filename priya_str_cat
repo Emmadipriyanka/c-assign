@@ -1,33 +1,32 @@
 #include<stdio.h>
-void priya_strcat(char [],char []);
-#define len 100
+void priya_strcat(char [],char []);//fun declaration
+#define len 100//defining macro as len and its value is 100
 int main()
 {
-    char s1[len],s2[len];
+    char s1[len],s2[len];//declaring 2 characters string s1 and s2
     printf("enter string s1:");
     scanf("%s",s1);
     printf("enter string s2:");
     scanf("%s",s2);
-    priya_strcat(s1,s2);
+    priya_strcat(s1,s2);//calling a function
 }
 void priya_strcat(char p[],char r[])
 {
-    int i=0,j=0,k=0;
-    char s3[len];
+    int i=0,j=0,k=0;//declaring and initialing i,j,k values as zero
+    char s3[len];//declaring character string as s3
     while(p[i]!='\0')
     {
-        s3[k]=p[i];
-        i++;
-        k++;
+        s3[k]=p[i];//assigning p values to s3
+        i++;//incrementing i value
+        k++;//incrementing k value
     }
-    i=0;
     while(r[j]!='\0')
     {
-        s3[k]=r[j];
-        j++;
-        k++;
+        s3[k]=r[j];//assigning r values to s3
+        j++;//incrementing j value
+        k++;//incrementing k value
     }
-    s3[k]='\0';
+    s3[k]='\0';//assigning s3 last value as null
     printf("concatenation string is %s",s3);
 }
 
