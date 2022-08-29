@@ -1,0 +1,44 @@
+#include<stdio.h>
+void priya_str_palindrome(char []);//function declaration
+int main()
+{
+    char s[20];//declaring a character string and its size
+    printf("enter a string:");
+    scanf("%s",s);
+    priya_str_palindrome(s);//calling a function by passing array as a parameter
+}
+void priya_str_palindrome(char p[])
+{
+    int len=0;//declaring and initializing len as zero
+    int c=0;//declaring and initializing c as zero
+    for(int i=0;p[i]!='\0';i++)//for loop to find length of the given string
+    {
+        len=len+1;
+    }
+    printf("length of the given string is %d \n",len);
+    for(int i=0;i<len;i++)//for llop to find given string is a palindrome or not
+    {
+        if(p[i]!=p[len-i-1])//condition to check first element of a  string and last element of string is same or not
+        {
+            c=c+1;
+        }
+    }
+    if(c==0)
+        printf("entered string is  a palindrome");
+    else
+        printf("entered string is not a palindrome");
+}
+
+output:
+
+***case 1:
+
+enter a string:priyanka
+length of the given string is 8 
+entered string is not a palindrome
+
+***case 2:
+
+enter a string:madam
+length of the given string is 5 
+entered string is  a palindrome
