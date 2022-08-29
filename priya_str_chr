@@ -1,11 +1,11 @@
 #include<stdio.h>
-#define len 100
+#define len 100//definig mcaro as len and its value is 100
 int main()
 {
-    char s1[len],search;
-    int i,c=0;
+    char s1[len],search;//declaring character search and s1
+    int i,c=0;//declaring i and initializing c as zero
     printf("enter a string:");
-    gets(s1);
+    gets(s1);//takes input from the user
     printf("enter charcter to be search:");
     scanf("%c",&search);
     for(i=0;i<len;i++)
@@ -14,7 +14,7 @@ int main()
         {
             if(s1[i]==search)
             {
-                c=c+1;
+                c=c+1;//incrementing the c value
                 break;
             }
         }
