@@ -1,22 +1,22 @@
 #include<stdio.h>
-int priya_strlen(char *);
+int priya_strlen(char *);//func declaration with return value
 int main()
 {
-    char s1[100];
+    char s1[100];//declaring character string and its size as 100
     printf("enter string:");
-    scanf("%[^\n]s",s1);
-    int len=priya_strlen(s1);
+    scanf("%[^\n]s",s1);//taking input from the user
+    int len=priya_strlen(s1);//len strores the return value of the called function
     printf("length of the string is %d",len);
 }
 int priya_strlen(char *p)
 {
-    int count=0;
-    while(*p!='\0')
+    int count=0;//declaring and initializing count variable as zero
+    while(*p!='\0')//condition to check string character is null or not
     {
-        p++;
-        count=count+1;
+        p++;//incrementing the pointer value
+        count=count+1;//incrementing the count value
     }
-    return count;
+    return count;//returning the count value
 }
 
 
