@@ -1,15 +1,15 @@
 #include<stdio.h>
-#define len 100
-int priya_strcmp(char [],char []);
+#define len 100//define macro as length and its value as 100
+int priya_strcmp(char [],char []);//fun declaration with return value
 int main()
 {
-    char s1[len],s2[len];
-    int cmp;
+    char s1[len],s2[len];//declaring two strings
+    int cmp;//declaring the cmp variable
     printf("enter a string:");
     scanf("%s",s1);
     printf("enter a string:");
     scanf("%s",s2);
-    cmp=priya_strcmp(s1,s2);
+    cmp=priya_strcmp(s1,s2);//cmp stores the value return from the function
     if(cmp==0)
     {
         printf("given strings are same");
@@ -21,12 +21,12 @@ int main()
 }
 int priya_strcmp(char p[],char r[])
 {
-    int i=0,c=0;
-    while(p[i]!='\0' && r[i]!='\0')
+    int i=0,c=0;//declaring and initializing c and i value as zero
+    while(p[i]!='\0' && r[i]!='\0')//while loop to check the characters of the strings are not equal to null
     {
         if(p[i]!=r[i])
         {
-            c=1;
+            c=1;//c as assigned with value 1
             break;
         }
         i++;
