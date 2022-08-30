@@ -19,7 +19,7 @@ int main () {
    mem_cpy(d, a,strlen(a));
    printf("After memcpy d= %s\n", d);
    char e[20];
-   mem_cpy(e, src+7,sizeof(char)*7);
+   mem_cpy(e, src+7,sizeof(char)*7);//mem_cpy(e+3, src+7,sizeof(char)*7);//After memcpy e = @�( c prog�
    printf("After memcpy e = %s\n",e);
    double src_arr[5]={1.1,2.2,3.3,4.4,5.5};
    double dest_arr[5];
