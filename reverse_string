@@ -19,3 +19,32 @@ int main()
 output:
 
 reverse string hsinah is
+
+
+
+
+
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[100];
+    scanf("%s",str1);
+    int len=strlen(str1);
+    //char str2[len];
+    int i=0;
+    for(i=0;i<len/2;i++)
+    {
+        char temp;
+        temp=str1[i];
+        str1[i]=str1[len-i-1];
+        str1[len-i-1]=temp;
+    }
+    printf("reverse string %s is",str1);
+    return 0;
+}
+
+output:
+
+hanish
+reverse string hsinah is
