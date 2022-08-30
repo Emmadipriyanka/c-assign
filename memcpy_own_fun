@@ -9,9 +9,10 @@ typedef struct
 void *mem_cpy(void *dest,void *src,int n);
 int main () {
    char src[50] = "this is c program that i had wrote";
-   char dest[50];
+   char dest[50];//char dest[10];
    printf("Before memcpy dest = %s\n", dest);
-   mem_cpy(dest, src,sizeof(char)*7);
+   mem_cpy(dest, src,sizeof(char)*7);//mem_cpy(dest, src,7);//mem_cpy(dest,src,9);
+   //dest[10]='\0';
    printf("After memcpy dest = %s\n", dest);
    char a[10]="abcdefghij";
    char d[10];
