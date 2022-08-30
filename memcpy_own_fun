@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct
+{
+    char name[20];
+    int age;
+    float avg;
+}student;
+void *mem_cpy(void *dest,void *src,int n);
+int main () {
+   char src[50] = "this is c program that i had wrote";
+   char dest[50];
+   printf("Before memcpy dest = %s\n", dest);
+   mem_cpy(dest, src,sizeof(char)*7);
+   printf("After memcpy dest = %s\n", dest);
+   char a[10]="abcdefghij";
+   char d[10];
+   mem_cpy(d, a,strlen(a));
+   printf("After memcpy d= %s\n", d);
+   char e[20];
+   mem_cpy(e, src+7,sizeof(char)*7);
+   printf("After memcpy e = %s\n",e);
+   double src_arr[5]={1.1,2.2,3.3,4.4,5.5};
+   double dest_arr[5];
+   mem_cpy(dest_arr, src_arr,sizeof(src_arr));
+   for(int i=0;i<5;i++)
+   {
+        printf("After memcpy  %d is %.2lf \n",i,dest_arr[i]);
+   }
+   student student1;
+   strcpy(student1.name,"priya");
+   student1.age=20;
+   student1.avg=97.7;
+   student student2;
+   mem_cpy(&student2,&student1,sizeof(student));
+   printf("NAME:%s\n",student2.name);
+   printf("AGE:%d\n",student2.age);
+   printf("AVG:%.2f\n",student2.avg);
+   return 0;
+}
+void *mem_cpy(void *dest,void *src,int n)
+{
+    if(dest==NULL)
+        return NULL;
+    else
+    {
+        char *char_dest=(char *)dest;
+        char *char_src=(char *)src;
+        for(int i=0;i<n;i++)
+        {
+            char_dest[i]=char_src[i];
+        }
+    }
+    return dest;
+}
+
+output:
+
+Before memcpy dest = �R�
+After memcpy dest = this is
+After memcpy d= abcdefghij
+After memcpy e =  c prog
+After memcpy  0 is 1.10 
+After memcpy  1 is 2.20 
+After memcpy  2 is 3.30 
+After memcpy  3 is 4.40 
+After memcpy  4 is 5.50 
+NAME:priya
+AGE:20
+AVG:97.70
