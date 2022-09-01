@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[]="learningisfun";
+    char *first,*second;
+    first=s;
+    second=s;
+    printf("original string is: %s \n",s);
+    memcpy(first+8,first,10);
+    printf("memcpy string is :%s\n",s);
+    memmove(second+8,second,10);
+    printf("memmove string is :%s\n",s);
+}
+
+
+output:
+
+original string is:learningisfun 
+memcpy string is :learninglearningis���
+memmove string is :learninglearningle���
