@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+struct stu//global declaration of structure definition
+{
+    int ro_no;
+    char name[20];
+    float per;
+};//student; structure variable
+int main()
+{
+    struct stu student[3];//array of structure
+    printf("three students details\n");
+    printf("enter students details:\n");
+    for(int i=0;i<3;i++)//accessing array values from user
+    {
+        scanf("%d %s %f",&student[i].ro_no,&student[i].name,&student[i].per);
+    }
+    printf("student details:");
+    for(int i=0;i<3;i++)//printing array elements
+    {
+        printf("\nro_no=%d \tname=%s\tper=%.2f",student[i].ro_no,student[i].name,student[i].per);
+    }
+    return 0;
+}
+
+output:
+
+In function ‘main’:
+main.c:16:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘char (*)[20]’ [-Wformat=]
+   16 |         scanf("%d %s %f",&student[i].ro_no,&student[i].name,&student[i].per);
+      |                   ~^                       ~~~~~~~~~~~~~~~~
+      |                    |                       |
+      |                 char *                  char (*)[20]
+
+
+three students details
+enter students details:
+7 priya 97.8 8 mouni 96.5 9 hani 99.4
+student details:
+ro_no=7         name=priya      per=97.80
+ro_no=8         name=mouni      per=96.50
+ro_no=9         name=hani       per=99.40
