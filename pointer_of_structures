@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+struct stu//global declaration of structure definition
+{
+    int ro_no;
+    char name[20];
+    float per;
+};//student; structure variable
+int main()
+{
+    struct stu student={7,"priya",97.8};//declaration of structure variable and initialization 
+    struct stu *ptr;//pointer to a structure
+    ptr=&student;//ppointer stores the address of a structure variable
+    printf("ro_no=%d \nname=%s \nper=%.2f",ptr->ro_no,ptr->name,ptr->per);
+}
+
+output:
+
+ro_no=7 
+name=priya 
+per=97.80
