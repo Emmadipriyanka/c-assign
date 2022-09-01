@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct abc{
+    int x,y;
+};
+struct abc *fun(int a ,int b)
+{
+    struct abc *ptr=(struct abc *)malloc(sizeof(struct abc));
+    ptr->x=a,
+    ptr->y=b+5;
+    return ptr;
+}
+void fun1(struct abc *ptr)
+{
+    printf("%d %d\n",ptr->x,ptr->y);
+}
+int main()
+{
+    struct abc *ptr1,*ptr2;
+    ptr1=fun(10,20);
+    ptr2=fun(30,40);
+    fun1(ptr1);
+    fun1(ptr2);
+    free(ptr1);
+    free(ptr2);
+    return 0;
+}
+
+output:
+
+10 25
+30 45
