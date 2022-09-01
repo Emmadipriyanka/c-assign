@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+struct stu//global declaration of structure definition
+{
+    int ro_no;
+    char name[20];
+    float per;
+};//student; structure variable
+void fun(struct stu[]);//fun declaration and passing structure array as an argument
+int main()
+{
+    struct stu student[2]={{7,"priya",97.8},{8,"hani",99.6}};//declaration of structure variable and initialization 
+    fun(student);//passing student array as an argument
+}
+void fun(struct stu student[])
+{
+    for(int i=0;i<2;i++)
+        printf("ro_no=%d \nname=%s \nper=%.2f\n",student[i].ro_no,student[i].name,student[i].per);
+}
+
+output:
+
+ro_no=7 
+name=priya 
+per=97.80
+ro_no=8 
+name=hani 
+per=99.60
