@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+struct stu//global declaration of structure definition
+{
+    int ro_no;
+    char name[20];
+    float per;
+};//student; structure variable
+void fun(struct stu);//fun declaration using call by value
+int main()
+{
+    struct stu student1={7,"priya",97.8};//declaration of structure variable and initialization 
+    struct stu student2={8,"hani",99.7};
+    fun(student1);
+    fun(student2);
+}
+void fun(struct stu student)
+{
+    printf("ro_no=%d \nname=%s \nper=%.2f\n",student.ro_no,student.name,student.per);
+}
+
+output:
+
+ro_no=7 
+name=priya 
+per=97.80
+ro_no=8 
+name=hani 
+per=99.70
