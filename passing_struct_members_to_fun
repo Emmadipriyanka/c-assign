@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+struct stu//global declaration of structure definition
+{
+    int ro_no;
+    char name[20];
+    float per;
+};//student; structure variable
+void fun(int,char[],float);//fun declaration using call by value
+void fun1(int *,char*[],float*);//fun declaration using call by reference
+int main()
+{
+    struct stu student={7,"priya",97.8};//declaration of structure variable and initialization 
+    printf("call by value\n");
+    fun(student.ro_no,student.name,student.per);
+    printf("\ncall by reference\n");
+    fun1(&student.ro_no,&student.name,&student.per);
+    printf("ro_no=%d \nname=%s \nper=%.2f",student.ro_no,student.name,student.per);
+}
+void fun(int x,char s[],float y)
+{
+    printf("ro_no=%d \nname=%s \nper=%.2f",x,s,y);
+}
+void fun1(int *x,char *s[],float *y)
+{
+    printf("enter elements:");
+    scanf("%d %s %f",x,s,y);
+}
+
+output:
+
+call by value
+ro_no=7 
+name=priya 
+per=97.80
+call by reference
+enter elements:8 hani 99
+ro_no=8 
+name=hani 
+per=99.00
