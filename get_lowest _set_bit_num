@@ -1,0 +1,25 @@
+#include <stdio.h>
+#define INT_SIZE sizeof(int) * 8 /* Integer size in bits */
+//lowest bit means 1 at the right side(it's position) 3,2,1,0
+int main()
+{
+    int num, order, i;
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    order = INT_SIZE - 1;//Initially set the order to max size of integer
+    for(i=0; i<INT_SIZE; i++)//Iterate through each bit of integer
+    {
+        if((num>>i) & 1)//If current bit is set
+        {
+            order = i;
+            break;///* Terminate the loop
+        }
+    }
+    printf("Lowest order set bit in %d is %d", num, order);
+    return 0;
+}
+
+output:
+
+Enter any number: 5
+Lowest order set bit in 5 is 0
