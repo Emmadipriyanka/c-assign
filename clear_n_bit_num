@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+	int num,n,new_num;
+	printf("Enter a number: ");
+	scanf("%d",&num);
+	printf("enter bit to clear:");
+	scanf("%d",&n);
+    new_num=(num&(~(1<<n)));
+	printf("clearing %d from %d\n",n,num);
+	printf("new number formed after clearing %d from %d is: %d",n,num,new_num);
+}
+
+output:
+
+Enter a number: 13
+enter bit to clear:0
+clearing 0 from a 13
+new number formed after clearing 0 from 13 is: 12
