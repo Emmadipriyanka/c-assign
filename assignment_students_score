@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+#define n1 5
+#define n2 6
 struct stu{
     int marks[2];
 };
@@ -9,8 +11,8 @@ int section_maths_b(struct stu []);
 int section_english_b(struct stu []);
 int main()
 {
-    struct stu s_a[5];
-    struct stu s_b[6];
+    struct stu s_a[n1];
+    struct stu s_b[n2];
     printf("enter maths marks of section a:\n");
     int max1=section_maths_a(s_a);
     printf("enter english marks of section a:\n");
@@ -30,7 +32,7 @@ int main()
 }
 int section_maths_a(struct stu s_a[])
 {
-    for(int i=0;i<5;i++)
+    for(int i=0;i<n1;i++)
     {
         for(int j=0;j<1;j++)
         {
@@ -38,7 +40,7 @@ int section_maths_a(struct stu s_a[])
         }
     }
     int max1=0;
-    for(int i=0;i<5;i++)
+    for(int i=0;i<n1;i++)
     {
         for(int j=0;j<1;j++)
         {
@@ -51,7 +53,7 @@ int section_maths_a(struct stu s_a[])
 }
 int section_english_a(struct stu s_a[])
 {
-    for(int i=0;i<5;i++)
+    for(int i=0;i<n1;i++)
     {
         for(int j=1;j<2;j++)
         {
@@ -59,7 +61,7 @@ int section_english_a(struct stu s_a[])
         }
     }
     int max2=0;
-    for(int i=0;i<5;i++)
+    for(int i=0;i<n1;i++)
     {
         for(int j=1;j<2;j++)
         {
@@ -72,7 +74,7 @@ int section_english_a(struct stu s_a[])
 }
 int section_maths_b(struct stu s_b[])
 {
-    for(int i=0;i<6;i++)
+    for(int i=0;i<n2;i++)
     {
         for(int j=0;j<1;j++)
         {
@@ -80,7 +82,7 @@ int section_maths_b(struct stu s_b[])
         }
     }
     int max1=0;
-    for(int i=0;i<6;i++)
+    for(int i=0;i<n2;i++)
     {
         for(int j=0;j<1;j++)
         {
@@ -93,7 +95,7 @@ int section_maths_b(struct stu s_b[])
 }
 int section_english_b(struct stu s_b[])
 {
-    for(int i=0;i<6;i++)
+    for(int i=0;i<n2;i++)
     {
         for(int j=1;j<2;j++)
         {
@@ -101,7 +103,7 @@ int section_english_b(struct stu s_b[])
         }
     }
     int max2=0;
-    for(int i=0;i<6;i++)
+    for(int i=0;i<n2;i++)
     {
         for(int j=1;j<2;j++)
         {
@@ -115,35 +117,36 @@ int section_english_b(struct stu s_b[])
 
 output:
 
+
 enter maths marks of section a:
-98
-78
+75
 67
-45
-99
-highest score in maths from section a=99
-enter english marks of section a:
-34
-23
-67
-86
 56
+43
+24
+highest score in maths from section a=75
+enter english marks of section a:
+45
+36
+45
+65
+67
 highest score in english from section a=67
 enter maths marks of section b:
-56
-45
-89
-78
-34
-23
-highest score in maths from section b=89
+44
+36
+54
+67
+87
+87
+highest score in maths from section b=87
 enter english marks of section a:
-45
-67
-57
-67
-78
-89
-9highest score in english from section b=89
-highest score in maths from class10 is:99
-highest score in english from class10 is:89
+94
+65
+76
+54
+46
+46
+highest score in english from section b=94
+highest score in maths from class10 is:87
+highest score in english from class10 is:94
