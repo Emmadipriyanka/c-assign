@@ -1,0 +1,21 @@
+#include <stdio.h>
+//toggle means invert or flip nth bit of a given number(cganging 1 as 0 and 0 as 1)
+int main()
+{
+    int num, n, newNum;
+    printf("Enter any number: ");//Input number from user 
+    scanf("%d", &num);
+    printf("Enter a bit to toggle ");//nput bit position you want to toggle 
+    scanf("%d", &n);
+    newNum = num ^ (1 << n);//Left shifts 1, n times and then perform bitwise XOR with num
+    printf("Number before toggling %d bit: %d\n", n, num);
+    printf("Number after toggling %d bit: %d\n", n, newNum);
+    return 0;
+}
+
+output:
+
+Enter any number: 5
+Enter a bit to toggle 3
+Number before toggling 3 bit: 5
+Number after toggling 3 bit: 13
