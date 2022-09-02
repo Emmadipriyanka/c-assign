@@ -1,0 +1,149 @@
+#include<stdio.h>
+#include<string.h>
+struct stu{
+    int marks[2];
+};
+int section_maths_a(struct stu []);
+int section_english_a(struct stu []);
+int section_maths_b(struct stu []);
+int section_english_b(struct stu []);
+int main()
+{
+    struct stu s_a[5];
+    struct stu s_b[6];
+    printf("enter maths marks of section a:\n");
+    int max1=section_maths_a(s_a);
+    printf("enter english marks of section a:\n");
+    int max2=section_english_a(s_a);
+    printf("enter maths marks of section b:\n");
+    int max3=section_maths_b(s_b);
+    printf("enter english marks of section a:\n");
+    int max4=section_english_b(s_b);
+    if(max1>max3)
+        printf("highest score in maths from class10 is:%d\n",max1);
+    else
+        printf("highest score in maths from class10 is:%d\n",max3);
+    if(max2>max4)
+        printf("highest score in english from class10 is:%d\n",max2);
+    else
+        printf("highest score in english from class10 is:%d\n",max4);
+}
+int section_maths_a(struct stu s_a[])
+{
+    for(int i=0;i<5;i++)
+    {
+        for(int j=0;j<1;j++)
+        {
+            scanf("%d",&s_a[i].marks[j]);
+        }
+    }
+    int max1=0;
+    for(int i=0;i<5;i++)
+    {
+        for(int j=0;j<1;j++)
+        {
+            if(s_a[i].marks[j]>max1)
+                max1=s_a[i].marks[j];
+        }
+    }
+    printf("highest score in maths from section a=%d\n",max1);
+    return max1;
+}
+int section_english_a(struct stu s_a[])
+{
+    for(int i=0;i<5;i++)
+    {
+        for(int j=1;j<2;j++)
+        {
+            scanf("%d",&s_a[i].marks[j]);
+        }
+    }
+    int max2=0;
+    for(int i=0;i<5;i++)
+    {
+        for(int j=1;j<2;j++)
+        {
+            if(s_a[i].marks[j]>max2)
+                max2=s_a[i].marks[j];
+        }
+    }
+    printf("highest score in english from section a=%d\n",max2);
+    return max2;
+}
+int section_maths_b(struct stu s_b[])
+{
+    for(int i=0;i<6;i++)
+    {
+        for(int j=0;j<1;j++)
+        {
+            scanf("%d",&s_b[i].marks[j]);
+        }
+    }
+    int max1=0;
+    for(int i=0;i<6;i++)
+    {
+        for(int j=0;j<1;j++)
+        {
+            if(s_b[i].marks[j]>max1)
+                max1=s_b[i].marks[j];
+        }
+    }
+    printf("highest score in maths from section b=%d\n",max1);
+    return max1;  
+}
+int section_english_b(struct stu s_b[])
+{
+    for(int i=0;i<6;i++)
+    {
+        for(int j=1;j<2;j++)
+        {
+            scanf("%d",&s_b[i].marks[j]);
+        }
+    }
+    int max2=0;
+    for(int i=0;i<6;i++)
+    {
+        for(int j=1;j<2;j++)
+        {
+            if(s_b[i].marks[j]>max2)
+                max2=s_b[i].marks[j];
+        }
+    }
+    printf("highest score in english from section b=%d\n",max2);
+    return max2;
+}
+
+output:
+
+enter maths marks of section a:
+98
+78
+67
+45
+99
+highest score in maths from section a=99
+enter english marks of section a:
+34
+23
+67
+86
+56
+highest score in english from section a=67
+enter maths marks of section b:
+56
+45
+89
+78
+34
+23
+highest score in maths from section b=89
+enter english marks of section a:
+45
+67
+57
+67
+78
+89
+9highest score in english from section b=89
+highest score in maths from class10 is:99
+highest score in english from class10 is:89
