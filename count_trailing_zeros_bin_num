@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define INT_SIZE sizeof(int) * 8 /* Integer size in bits */
+//trailing zeros means no.of zeros one after the other(zeros in continuous manner)
+int main()
+{
+    int num,count=0, i;
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    for(i=0; i<INT_SIZE; i++)//Iterate through each bit of integer
+    {
+        if((num>>i) & 1)//If current bit is set
+        {
+            break;///* Terminate the loop
+        }
+        count++;
+    }
+    printf("total no.of trailing zeors in %d is %d", num,count);
+    return 0;
+}
+
+output:
+
+Enter any number: 5
+total no.of trailing zeors in 5 is 0
