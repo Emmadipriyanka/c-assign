@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter a number:");
+    scanf("%d",&n);
+    if(n & 1)
+        printf("least significant bit is set as 1 in %d",n);
+    else
+        printf("least significant bit is not set(0) in %d",n);
+}
+
+output:
+
+enter a number:12
+least significant bit is not set(0) in 12
+
+case :2
+
+enter a number:5
+least significant bit is set as 1 in 5
