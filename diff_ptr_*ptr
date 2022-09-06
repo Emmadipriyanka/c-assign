@@ -1,0 +1,10 @@
+                                                          ptr+1 vs *ptr+1
+                                                          
+                     ptr + 1 	                                                                    *ptr + 1
+
+1.ptr is a pointer to an entire array.                                       1. *ptr is a pointer to the first element of the array.
+  So, if we move ptr by 1 position it will point                                 So, if we move *ptr by 1 position it will point the second element.
+  the next block of 5 elements.
+	
+2.If the array base address is 1000,ptr+1 will be                            2. If the array base address is 1000, *ptr+1 will be 1000 + 4 which is 1004
+1000 + (5 * 4) which is 1020
