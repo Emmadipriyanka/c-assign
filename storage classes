@@ -1,0 +1,58 @@
+/*#include<stdio.h>
+//auto int b;//file-scope declaration of ‘b’ specifies ‘auto’
+static int b;//static variables are also declared globallyand it's default value is zero
+void static_fun()
+{
+    int a=10;//this is auto variable and it's default value is garbage  , scope and lifetime within the block and it stores on stack ;
+    //static int a;//when it is declared it's default value is '0'(zero) , scope within the block and lifetime throughout the program 
+    //it stores on data segment
+    a++;
+    printf("%d \n",a);
+    //b++;
+    //printf("%d \n",b);
+}
+int main()
+{
+    static_fun();
+    static_fun();
+    //printf("%d",a);// ‘a’ undeclared (first use in this function)  scope of a
+    //b++;
+    //printf("%d \n",b);
+}
+
+
+#include<stdio.h>
+//register int j;//register name not specified for ‘j’
+void sum_n_num()
+{
+    register int i;//scope and lifetime with in the block
+    printf("default i value is: %d\n",i);//default value is garbage
+    //printf("%p",&i); //address of register variable ‘i’ requested
+    int sum=0,n;
+    printf("enter n value:");
+    scanf("%d",&n);
+    for(i=0;i<=n;i++)
+    {
+        sum=sum+i;
+    }
+    printf("%d\n",sum);
+    printf("i value is: %d\n",i);//scope
+}
+int main()
+{
+    sum_n_num();
+    //printf("%d\n",i); //'i’ undeclared (first use in this function)
+}
+*/
+
+
+
+#include<stdio.h>
+int a;//declaration and defnition and its default value is zero'0' scope globally and lifetime through out the program
+int main()
+{
+    extern int a;//extern tells to compiler that"go out of the scope then u will find the definition of this variable a"
+    printf("%d\n",a);
+    a++;
+    printf("%d",a);
+}
