@@ -1,0 +1,21 @@
+// padding using attribute
+#include <stdio.h>
+#pragma pack(1)//by using pragma pack we can retrive structure padding
+struct s {
+    int i;
+    char ch;
+    double d;
+};// __attribute__((packed)); //by using attribute we can retrive structure padding
+// Attribute informing compiler to pack all members
+  
+int main()
+{
+    struct s A;
+    printf("Size of A is: %ld", sizeof(A));
+}
+
+
+output:
+
+Size of A is: 13//after using pragma or attribute
+Size of A is: 16//before structure padding
