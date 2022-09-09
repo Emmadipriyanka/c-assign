@@ -1,0 +1,35 @@
+#include<stdio.h>
+#define len 10
+void fun(int arr[])
+{
+    int max,min,i;
+    max=min=arr[0];
+    for(i=1;i<len;i++)
+    {
+        if(min>arr[i])
+        {
+            min=arr[i];
+        }
+        else if(max<arr[i])
+            max=arr[i];
+    }
+    printf("max element is: %d\n",max);
+    printf("min element is: %d",min);
+}
+int main()
+{
+    int arr[len];
+    printf("enter array elements:");
+    for(int i=0;i<len;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    fun(arr);
+}
+
+
+output:
+
+enter array elements:10 4 2 7 6 9 3 8 1 5
+max element is: 10
+min element is: 1
