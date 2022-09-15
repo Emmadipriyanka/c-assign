@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main( ){
+   FILE *fp;
+   int i;
+   fp = fopen ("num.txt", "w");
+   for (i =1; i<= 5; i++){
+      putw (i, fp);//writing(scanf) i value into the file like 1 2 3 4 5 
+   }
+   fclose (fp);
+   fp =fopen ("num.txt", "r");
+   printf ("file content is\n");
+   for (i =1; i<= 5; i++){
+      i= getw(fp);
+      printf ("%d",i);//reading(printf) i vaue from the file like 1 2 3 4 5
+      printf("\n");//it gives new line
+   }
+   fclose (fp);
+   return 0;
+}
+
+output:
+
+file content is
+1
+2
+3
+4
+5
