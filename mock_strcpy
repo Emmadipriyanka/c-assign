@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char *s="priya";///pointer is pointing to string which is stored on heap
+    char *p="pinky";//pointer is pointing to string which is stored on heap
+    printf("%s",strcpy(s,p));//we copying pointers pointing to base address of an string 
+    return 0;
+}
+
+output:
+
+segmentation fault
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[]="priya";
+    char p[]="pinky";
+    printf("%s",strcpy(s,p));
+    return 0;
+}
+
+output:
+
+pinky
