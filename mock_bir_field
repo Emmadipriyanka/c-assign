@@ -1,0 +1,16 @@
+#include<stdio.h>
+typedef struct name{
+   int x:4;//4 bits are assigned
+   int y:3;//3 bits are assigned
+}priya;
+int main()
+{
+    priya p={3,7};//3 in binary 0011 and 7 is 111
+    printf("x:%d \n",p.x);//prints 3 because msb is 0
+    printf("y:%d \n",p.y); //prints -1 because msb is 1 (its a negative number)
+}
+
+output:
+
+x:3 
+y:-1
