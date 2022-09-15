@@ -1,0 +1,16 @@
+#include<stdio.h>
+struct s
+{
+    char *c;
+    struct s *p;
+};
+void main()
+{
+    struct s s1;
+    struct s *m=&s1;
+    printf("%ld %ld %ld %ld",sizeof(s1),sizeof(*m),sizeof(m),sizeof(m->p));
+}
+
+output:
+
+16 16 8 8
