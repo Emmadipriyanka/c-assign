@@ -1,0 +1,41 @@
+#include<stdio.h>
+union name{
+   int x:4;//4 bits are assigned
+   int y:3;//3 bits are assigned
+};
+int main()
+{
+    union name p={3,7};//3 in binary 0011 and 7 is 111
+    printf("x:%d \n",p.x);//prints 3 because msb is 0
+    printf("y:%d \n",p.y); //prints -1 because msb is 1 (its a negative number)
+}
+
+output:
+
+main.c: In function ‘main’:
+main.c:8:21: warning: excess elements in union initializer
+    8 |     union name p={3,7};//3 in binary 0011 and 7 is 111
+      |                     ^
+main.c:8:21: note: (near initialization for ‘p’)
+x:3 
+y:3 
+
+
+
+
+#include<stdio.h>
+union name{
+  // int x:4;//4 bits are assigned
+   int y:3;//3 bits are assigned
+};
+int main()
+{
+    union name p={7};//3 in binary 0011 and 7 is 111
+   // printf("x:%d \n",p.x);//prints 3 because msb is 0
+    printf("y:%d \n",p.y); //prints -1 because msb is 1 (its a negative number)
+}
+
+
+output:
+
+y: -1
