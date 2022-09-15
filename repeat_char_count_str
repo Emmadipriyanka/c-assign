@@ -1,0 +1,62 @@
+#include<stdio.h>
+int main()
+{
+    char s[100];
+    printf("enter string:");
+    fgets(s,100,stdin);
+    printf("string is : %s\n",s);
+    int count[10];
+    for(int i=0;s[i]!='\0';i++)
+    {
+        int c=1;
+        for(int j=i+1;s[j]!='\0';j++)
+        {
+            if(s[i]==s[j])
+            {
+                c=c+1;
+                count[j]=-1;
+            }
+        }
+        if(count[i] != -1)
+            count[i]=c;  
+    }
+    for(int i=0;s[i]!='\0';i++)
+    {
+        if(count[i]!= -1)
+        {
+            if(count[i]>1)
+                printf("%c appears %d times in %s \n",s[i],count[i],s);
+        }
+    }
+}
+
+output:
+
+enter string:priya pinky
+string is : priya pinky
+
+p appears 2 times in priya pinky
+ 
+i appears 2 times in priya pinky
+ 
+y appears 2 times in priya pinky
+
+
+***case 2:
+
+enter string:india
+string is : india
+
+i appears 2 times in india
+
+^^^case 3:
+
+enter string:India
+string is : India
+
+||||case 4:
+
+enter string:PriyAnkA
+string is : PriyAnkA
+
+A appears 2 times in PriyAnkA
