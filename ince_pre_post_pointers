@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+    int i=9;
+    //printf("%d  %d  %d\n",++i,++i,++i);//first increment and then assign its value so,i value should be 12 in all cases
+    //printf("%d  %d  %d\n",i++,i++,i++);//printf stmt evaluates left to right and prints right to left and postince first assign and then increment so i value should be 11 10 9
+    printf("%d  %d  %d\n",i++,++i,i++);//printf stmt evaluates left to right and prints right to left and first postinc 
+                                    //assign its value and the preinc increment i value after completion of post then it will assign the value to i
+                                    //it will print 11 12 9
+    float a=9.7;
+    int c;
+    char *ptr=(char *)&a;//here type casting should be done of floating address will be pointing to the character pointer
+    for(c=0;c<=3;c++)
+        printf("%d ",*++ptr);//so it prints garbage value
+}
