@@ -1,0 +1,38 @@
+// #include<stdio.h>
+// int main()
+// {
+//     int id=fork();
+//     int n;
+//     if(id==0)
+//         n=1;
+//     else
+//         n=6;
+//     for(int i=n;i<(n+5);i++)
+//         printf("%d",i);//it prints only else statement 678910 first priority comes to the parent and then child so we put parent in waiting state 
+// }
+
+#include<stdio.h>
+
+int main()
+{
+    int n,i;
+    int id = fork();
+    if(id==0)
+    {
+        n=1;
+    }
+    else 
+    {
+        n=6;
+    }
+    if(id!=0) //condition to make parent process wait untill child gets terminated
+    {
+        wait();
+    }
+    for(i=n;i<n+5;i++)
+    {
+        printf("%d",i);
+    }
+    // printf("\n");
+
+}
