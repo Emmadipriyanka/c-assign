@@ -1,0 +1,17 @@
+ EAGAIN(112)
+Description:
+
+A system limit is exceeded, such as when too many threads have been created.
+
+
+EINVAL (121)
+Description:
+
+The value of tattr is invalid.
+
+
+EPERM (139)
+Description:
+
+The caller does not have appropriate permission to set the required scheduling parameters or scheduling policy.
+
