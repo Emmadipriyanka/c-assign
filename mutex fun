@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+pthread_t tid[2];
+pthread_mutex_t my_mutex;
+int counter;
+
+void* doSomeThing(void *arg)
+{
+    unsigned long i = 0;
+    pthread_mutex_lock(&my_mutex);
+    counter += 1;
+    printf("\n Job %d started,thread id=%ld\n", counter,pthread_self());
+    //pthread_mutex_unlock(&my_mutex);//undefined behaviour of thread one only thread 2 finishes its exec but with same thread id of 1 and 2
+    for(i=0; i<(0xFFFFFFFF);i++);
+    printf("\n Job %d finished, thread id=%ld\n", counter,pthread_self());
+    
+  pthread_mutex_unlock(&my_mutex);
+    return NULL;
+}
+
+int main(void)
+{
+    int i = 0;
+    int err;
+    pthread_mutex_init(&my_mutex,NULL);
+    while(i < 2)
+    {
+        err = pthread_create(&(tid[i]), NULL, &doSomeThing, NULL);
+        if (err != 0)
+            printf("\ncan't create thread :[%s]", strerror(err));
+        i++;
+    }
+    
+
+    pthread_join(tid[0], NULL);
+    pthread_join(tid[1], NULL);
+       pthread_mutex_destroy(&my_mutex);
+    return 0;
+}
+
+output:
+
+Job 1 started,thread id=140697528608512
+
+ Job 1 finished, thread id=140697528608512
+
+ Job 2 started,thread id=140697537001216
+
+ Job 2 finished, thread id=140697537001216
