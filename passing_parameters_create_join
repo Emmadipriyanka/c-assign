@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<pthread.h>
+char str[25]="this is my first thread";
+void* sub(void *id)
+{
+    printf("beginning of thread %d \n ",(int *)id);//typecasting is done because id is void pointer but we are passing integer value
+    printf("");
+    int a=20;
+    int b=30;
+    int c=b-a;
+    printf("%d\n",c);
+    printf("end\n");
+    
+}
+int main()
+{
+    pthread_t tid;
+    
+    printf("%d\n",tid);
+  int ret= pthread_create(&tid,NULL,sub,(void *)tid);//(void *)-->means fun that accepts pointer as a parameter  and passing tid value to  fun(sub)
+  printf("%d\n",ret);
+  ret==0?printf("thread is created successfully\n"):printf("thread is not created");
+    int ref=pthread_join(tid,(void*)tid);//(void **)&tid is same as (void *)tid
+    printf("%d\n",ref);
+  ref==0?printf("thread is waited successfully\n"):printf("thread is not waited");
+    printf("end of main");
+}
