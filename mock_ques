@@ -1,0 +1,25 @@
+#include <stdio.h>
+int fun3(int a)
+	{
+	    return a;
+	}
+	int fun2(int a,int b)
+	{
+	    int c=a*b;
+	    return c;
+	}
+	int fun1(int a,int b,int c)
+	{
+	    int d=a*b*c;
+	    return d;
+	}
+	int main()
+	{
+	    int z=fun3(3) - fun2(1,2) /fun1(1,2,3);//fun3 will call first and then create some memory space on stack and ten for fun2,fun1
+	    printf("%d",z);
+	    return 0;
+}
+
+o/p:
+
+3
