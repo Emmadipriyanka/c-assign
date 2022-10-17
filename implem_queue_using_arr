@@ -1,0 +1,80 @@
+#include<stdio.h>
+#define len 4
+int queue[len];
+int front=-1;
+int rear=-1;
+void enqueue(int data)
+{
+    if(rear==(len-1))
+        printf("queue overflow");
+    else if(front==-1 && rear==-1)
+    {
+        front=rear=0;
+        queue[rear]=data;
+        printf("element %d is inserted at  index %d\n",data,rear);
+    }
+    else{
+    rear=rear+1;
+    queue[rear]=data;
+    printf("element %d is inserted at  index %d\n",data,rear);
+    }
+}
+void dequeue()
+{
+    if(front== -1 && rear==-1)
+        printf("underflow");
+    else if(front==rear)
+    {
+        printf("element %d is deleted\n",queue[front]);
+        front=rear=-1;
+    }
+    else{
+    printf("element %d is deleted\n",queue[front]);
+    front=front+1;
+    }
+}
+void peek()
+{
+    int i;
+    if(front== -1 && rear==-1)
+        printf("underflow");
+    i=queue[front];
+    printf("top element in stack is %d\n",i);
+}
+void display()
+{
+    int i;
+    if(front== -1 && rear==-1)
+        printf("underflow");
+    printf("elements in queue : ");
+    for(i=front;i<=rear;i++)
+        printf("%d\t",queue[i]);
+    printf("\n");
+}
+int main()
+{
+    enqueue(11);
+    enqueue(12);
+    enqueue(13);
+    enqueue(14);
+    display();
+    peek();
+    dequeue();
+    dequeue();
+    peek();
+    display();
+}
+
+
+output:
+
+element 11 is inserted at  index 0
+element 12 is inserted at  index 1
+element 13 is inserted at  index 2
+element 14 is inserted at  index 3
+elements in queue : 11  12      13      14
+top element in stack is 11
+element 11 is deleted
+element 12 is deleted
+top element in stack is 13
+elements in queue : 13  14
