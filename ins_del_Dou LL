@@ -146,8 +146,8 @@ void beg_insert()//beg insertion
      temp=head;
      head=temp->next;
      head->pre=0;//to delete first node head is updated with headnext value
-     free(temp);//emp becomes free
      }
+     count--;
  }
  void end_delete()//end del fun
  {
@@ -166,7 +166,7 @@ void beg_insert()//beg insertion
       {
           prevnode->next=0;//last node becomes nulli.e., prevnode
       }
-      free(temp);
+      count--;
  }
  void middle_delete()//mid deletion fun
  {
@@ -322,18 +322,18 @@ no. of nodes is 7
 
  Enter the Choice:2
 782346
-no. of nodes is 7
+no. of nodes is 6
  Enter the Choice:8
 
  Enter the Choice:2
 78234
-no. of nodes is 7
+no. of nodes is 5
  Enter the Choice:9
 enter the pos
 2
 
  Enter the Choice:2
 7234
-no. of nodes is 6
+no. of nodes is 4
  Enter the Choice:10
 exit point
