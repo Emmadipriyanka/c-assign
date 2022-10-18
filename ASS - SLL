@@ -118,3 +118,35 @@ int main()
             while(choice!=5);
     return 0;
 }
+
+output:
+
+LINKED LIST OPERATIONS 
+         1.CREATE 
+         2.DISPLAY 
+         3.BEG_INSERT
+         4.END_INSERT
+         5.EXIT
+ Enter the Choice:1
+enter the data to create:200
+do u want to create anothe node?:0
+
+ Enter the Choice:2
+200
+no. of nodes is 1
+ Enter the Choice:3
+enter the data to insert
+100
+
+ Enter the Choice:2
+100     200
+no. of nodes is 2
+ Enter the Choice:4
+enter the data to insert
+300
+
+ Enter the Choice:2
+100     200     300
+no. of nodes is 3
+ Enter the Choice:5
+exit point
