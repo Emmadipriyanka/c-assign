@@ -1,0 +1,106 @@
+#include<stdio.h>
+
+void swap(int *x,int *y)
+{
+    int temp2;
+    temp2= *x;
+    *x= *y;
+    *y=temp2;
+}
+int partition(int arr[5],int start,int end)
+{
+    int pivot=arr[end];
+    int pindex=start;
+    int i,temp;
+        for(i=start;i<end;i++)
+        {
+            if(arr[i]<pivot)
+            {
+               swap(&arr[i],&arr[pindex]);
+                pindex++;
+            }
+        }
+    swap(&arr[end],&arr[pindex]);
+    return pindex;
+}
+void quicksort(int arr[5],int start,int end)
+{
+     int pindex;
+    if(start<end)
+    {
+        pindex=partition(arr,start,end);
+        quicksort(arr,start,pindex-1);
+        quicksort(arr,pindex+1,end);
+    }
+}
+int main()
+{
+    int n,start,end;
+    printf("enter n value");
+    scanf("%d",&n);
+    int arr[n];
+    printf("enter array elements:");
+    for(int i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    start=0;
+    end=n-1;
+    quicksort(arr,start,end);
+    for(int i=0;i<n;i++)
+        printf("%d\t",arr[i]);
+}
+
+OUTPUT:
+
+enter n value5
+enter array elements:10 25 3 50 20
+3       10      20      25      50
+
+
+
+
+#include<stdio.h>
+int partition(int arr[],int start,int end)
+{
+    int pivot=arr[end];
+    int pindex=start;
+    int i,temp;
+        for(i=start;i<end;i++)
+        {
+            if(arr[i]<pivot)
+            {
+                temp=arr[i];
+                arr[i]=arr[pindex];
+                arr[pindex]=temp;
+                pindex++;
+            }
+        }
+    temp=arr[end];
+    arr[end]=arr[pindex];
+    arr[pindex]=temp;
+    return pindex;
+}
+void quicksort(int arr[],int start,int end)
+{
+     int pindex;
+    if(start<end)
+    {
+        pindex=partition(arr,start,end);
+        quicksort(arr,start,pindex-1);
+        quicksort(arr,pindex+1,end);
+    }
+}
+int main()
+{
+    int n,start,end;
+    printf("enter n value");
+    scanf("%d",&n);
+    int arr[n];
+    printf("enter array elements:");
+    for(int i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    start=0;
+    end=n-1;
+    quicksort(arr,start,end);
+    for(int i=0;i<n;i++)
+        printf("%d\t",arr[i]);
+}
