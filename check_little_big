@@ -1,0 +1,15 @@
+#include <stdio.h>
+ 
+int main(void)
+{
+ unsigned int value = 12345678;
+ char *r = (char *)&value;//here char pointer fetches one byte 
+ *r=value;
+ (*r==78)? printf("its a little endian system"):printf("its a big endian system");
+ 
+ return 0;
+}
+
+output:
+
+its a little endian system
