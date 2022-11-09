@@ -1,0 +1,29 @@
+#include <stdio.h>
+enum val{not_found,found};
+int main(void)
+{
+    char search,s[20];
+    int c=0;
+    printf("enter a string:");
+    scanf("%s",s);
+    printf("enter a element to search:");
+    scanf("%s",&search);
+    int len=0;
+    for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+        len++;
+    printf("length of the string is: %d\n",len);
+    for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+    {
+        if(s[i]==search)
+            c=found+1;
+    }
+    (c>0)?printf("the searching element present in a given string is %s and it's frequency is %d",s,c):printf("the searching element is not present in a given string is %s",s);
+ 
+}
+
+output:
+
+enter a string:priyanka
+enter a element to search:a
+length of the string is: 8
+the searching element present in a given string is priyanka and it's frequency is 2
