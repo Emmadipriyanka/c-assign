@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main(void)
+{
+ int value;
+ printf("enter number:");
+ scanf("%d",&value);
+ value=((value&0X000000ff)<<24)|((value&0X0000ff00)<<8)|((value&0X0000ff00)>>8)|((value&0X000000ff)>>24);
+ printf("%x",value);//%x is for to print a num in bits(8 bits format)
+ 
+ return 0;
+}
+
+output:
+
+enter number:78
+4e000000
