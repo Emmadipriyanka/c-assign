@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define n 4//replacing last four chracters in a string
+int main(void)
+{
+    char s[20];
+    printf("enter a string:");
+    scanf("%s",s);
+    int len=0;
+    for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+        len++;
+    printf("length of the string is: %d\n",len);
+    for(int i=0;i<n/2;i++)//we required only 2 swaps
+    {
+        int temp=s[len-(n-i)];
+        s[len-(n-i)]=s[len-(i+1)];
+        s[len-(i+1)]=temp;
+    }
+    printf("the string is %s ",s);
+ 
+}
+
+output:
+
+enter a string:priya
+length of the string is: 5
+the string is payir 
