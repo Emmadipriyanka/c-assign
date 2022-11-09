@@ -1,0 +1,25 @@
+There are 9 coins, all except one are the same weight, the odd one is heavier than the rest. 
+You must determine which is the odd one out using an old fashioned balance(weighing machine). 
+You may use the balance twice.
+Explain how this can be done.
+
+EXPLANATION:
+
+MAKE 3 COINS AS ONE PAIR like
+  pair 1: 1,2,3 coins
+  pair 2: 4,5,6 coins
+  pair 3: 7,8,9 coins 
+  
+    randomly place any two pair of coins in weighing machine and check it's weight.
+    
+    CASE : 1
+    
+    *if there weights are same,take third pair(which is not placed on weighing machine) of coins and pick randomly any two coins & place them in weighing
+      machine and check coins weight ,if there weights are same, the remaining coin is odd one
+      if the placed coins weights are different , then the high weight coin is the odd one.  
+      
+     CASE :2
+     
+      *if there weights are not same,then randomly pick one pair of coins in those two pairs,pick randomly any two coins & place them in weighing
+      machine and check coins weight ,if there weights are same, the remaining coin is odd one
+      if the placed coins weights are different , then the high weight coin is the odd one.  
