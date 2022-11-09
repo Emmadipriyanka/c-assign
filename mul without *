@@ -1,0 +1,21 @@
+#include <stdio.h>
+ 
+int main(void)
+{
+ int a,b,c=0;
+ printf("enter a and b values:");
+ scanf("%d  %d",&a,&b);
+ while(a){
+     c=c+b;
+     a--;
+ }
+ printf("multipication of a&b is %d",c);//%x is for to print a num in bits(8 bits format)
+ 
+ return 0;
+}
+
+
+output:
+
+enter a and b values:4 6
+multipication of a&b is 24
