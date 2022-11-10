@@ -1,0 +1,138 @@
+#include <stdio.h>
+enum val{not_found,found};
+int main(void)
+{
+    char search,s[20];
+    int c=0;
+    printf("enter a string:");
+    scanf("%s",s);
+    printf("enter a element to search:");
+    scanf("%s",&search);
+    int len=0;
+    for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+        len++;
+    printf("length of the string is: %d\n",len);
+    for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+    {
+        if(s[i]==search)
+            c=found+1;
+    }
+    (c>0)?printf("the searching element present in a given string is %s and it's frequency is %d",s,c):printf("the searching element is not present in a given string is %s",s);
+ 
+}
+
+
+
+
+debugging:
+
+Reading symbols from a.out...
+(gdb) r
+Starting program: /home/a.out 
+
+Breakpoint 4, main () at main.c:6
+6           int c=0;
+(gdb) n
+7           printf("enter a string:");
+(gdb) n
+8           scanf("%s",s);
+(gdb) n
+enter a string:priyanka
+9           printf("enter a element to search:");
+(gdb) n
+
+Breakpoint 3, main () at main.c:10
+10          scanf("%s",&search);
+(gdb) n
+enter a element to search:a
+11          int len=0;
+(gdb) n
+
+Breakpoint 2, main () at main.c:12
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) s
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+13              len++;
+(gdb) n
+12          for(int i=0;s[i]!='\0';i++)//to calculate length of the string
+(gdb) n
+14          printf("length of the string is: %d\n",len);
+(gdb) n
+length of the string is: 8
+
+Breakpoint 1, main () at main.c:15
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) s
+17              if(s[i]==search)
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+18                  c=found+1;
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+17              if(s[i]==search)
+(gdb) n
+18                  c=found+1;
+(gdb) n
+15          for(int i=0;s[i]!='\0';i++)//we required only 2 swaps
+(gdb) n
+20          (c>0)?printf("the searching element present in a given string is %s and it's frequency is %d",s,c):printf("the searching element is not present in a given string is %s",s);
+(gdb) n
+22      }
+(gdb) n
+__libc_start_main (main=0x555555555189 <main>, argc=1, argv=0x7fffffffecd8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fffffffecc8) at ../csu/libc-start.c:342
+342     ../csu/libc-start.c: No such file or directory.
+(gdb) n
+the searching element present in a given string is priyanka and it's frequency is 2[Inferior 1 (process 4591) exited normally]
