@@ -1,0 +1,27 @@
+#include<stdio.h>
+int sum;
+int add(int *n)
+{
+    if(*n>0)
+    {
+        int rem=*n%10;
+        sum=sum+rem;
+        *n=*n/10;
+        add(n);
+    }
+    return sum;
+}
+int main()
+{
+    int n;
+    printf("enter a number:");
+    scanf("%d",&n);
+    int sum1=add(&n);
+    printf("sum of digits in a given number is %d",sum1);
+}
+
+
+output:
+
+enter a number:89357
+sum of digits in a given number is 32
