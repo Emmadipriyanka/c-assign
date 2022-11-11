@@ -1,0 +1,75 @@
+#include<stdio.h>
+#define len 10
+enum cases{ONE=1,TWO};
+int main()
+{
+    int arr[len],ch;
+    printf("enter array elements:");
+    for(int i=0;i<len;i++)
+        scanf("%d",&arr[i]);
+    printf("enter your choice:");
+    scanf("%d",&ch);
+    switch(ch){
+        case ONE:for(int i=0;i<len;i++){
+            for(int j=i+1;j<len;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        printf("array of elements in ascending order:");
+        for(int i=0;i<len;i++)
+            printf("%d\t",arr[i]);
+        break;
+        case TWO:for(int i=0;i<len;i++){
+            for(int j=i+1;j<len;j++)
+            {
+                if(arr[i]<arr[j])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        printf("array of elements in descending order:");
+        for(int i=0;i<len;i++)
+            printf("%d\t",arr[i]);
+        break;
+        
+    }
+}
+
+output:
+
+enter array elements:1
+2
+3
+5
+8
+2
+10
+20
+66
+88
+enter your choice:1
+array of elements in ascending order:1  2       2       3       5       8       10      20      66      88
+
+**case :2
+
+enter array elements:4
+0
+10
+44
+22
+76
+45
+98
+79
+24
+enter your choice:2
+array of elements in descending order:98        79      76      45      44      24      22      10      4     
