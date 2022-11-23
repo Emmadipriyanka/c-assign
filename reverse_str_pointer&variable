@@ -1,0 +1,47 @@
+**using pointer
+
+#include <stdio.h>
+#include <string.h>
+  
+int main()
+{
+  
+    char str[]="priyanka";
+    int len=strlen(str);
+    char *ptr=str;
+    for(int i=0;i<len/2;i++)
+    {
+        int temp=ptr[i];
+        ptr[i]=ptr[len-i-1];
+        ptr[len-i-1]=temp;
+    }
+    printf("%s",str);
+}
+
+output:
+
+aknayirp
+
+
+**by using variable:
+
+#include <stdio.h>
+#include <string.h>
+  
+int main()
+{
+  
+    char str[]="priyanka";
+    int len=strlen(str);
+    for(int i=0;i<len/2;i++)
+    {
+        int temp=str[i];
+        str[i]=str[len-i-1];
+        str[len-i-1]=temp;
+    }
+    printf("%s",str);
+}
+
+output:
+
+aknayirp
