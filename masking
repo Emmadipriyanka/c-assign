@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+  
+int main()
+{
+  
+    int n=21;
+    int k=(((1<<4)-1)&(n>>(2-1)));//extract bits from 2 to 4
+    printf("%d",k);
+}
+
+output;
+
+10
