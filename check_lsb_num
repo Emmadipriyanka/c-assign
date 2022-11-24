@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("enter a number:");
+    scanf("%d",&n);
+    if(n&1)
+        printf("\nlsb is set");//lsb bit is 1
+    else
+        printf("\n lsb is not set");//lsb bit is 0
+    return 0;
+}
+
+output:
+
+enter a number:10
+
+lsb is not set
