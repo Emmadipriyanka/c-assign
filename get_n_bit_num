@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+    int n,bit;
+    printf("enter a number:");
+    scanf("%d",&n);
+    printf("enter a bit:");
+    scanf("%d",&bit);
+    if((n>>bit)&1)
+        printf("\nthe entered bit is 1");
+    else
+        printf("\nthe entered bit is 0");
+    return 0;
+}
+
+output:
+
+enter a number:5
+enter a bit:1
+
+the entered bit is 0
