@@ -1,0 +1,55 @@
+#include<stdio.h>
+
+void display(int c)
+{
+    printf("sum of two numbers is %d",c);
+}
+
+int sum(void(*fun)(int))
+{
+    int a,b;
+    printf("enter a and b values:");
+    scanf("%d %d",&a,&b);
+    int c=a+b;
+    (*fun)(c);
+}
+int main()
+{
+    void (*fun) (int)=display;
+    sum(fun);
+}
+
+
+output:
+
+enter a and b values:8 5
+sum of two numbers is 13
+
+
+
+
+#include <stdio.h>
+void sum(int a, int b)
+{
+    printf("sum=%d\n",a+b);
+}
+void sub(int a, int b)
+{
+    printf("sub=%d",a-b);
+}
+void display(void(*ptr)(int,int))
+{
+    (*ptr)(5,1);
+}
+
+void main()
+{
+    display(sum);
+    display(sub);
+}
+
+
+output:
+
+sum=6
+sub=4
