@@ -6,7 +6,7 @@
 int main()
 {
     char str1[30];
-    int i,count=0;
+    int i,found=0;
     char ch;
     
     printf("Enter string1:\n");
@@ -17,11 +17,13 @@ int main()
     {
        if(str1[i]==ch)
        {
-           count++;
+           found=1;
+           break;
        }
     }
-
-        printf("Character %c is found these %d times ",ch,count);
-    
+    if(found==1)
+        printf("Character %c found at %d",ch,i);
+    else
+        printf("Character not found");
     return 0;
 }
