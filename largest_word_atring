@@ -4,10 +4,10 @@
 int main()
 {
     char str1[50][50],small[50],large[50];
-    int i=0,j=0,k,len;
-    char str[50];
-    printf("enter string:");
-    fgets(str,50,stdin);
+    int i=0,j=0,count=0,k,len;
+    char str[50]="i am working at thundersoft";
+    // printf("enter string:");
+    // fgets(str,50,stdin);
     for(k=0;str[k]!='\0';k++){
         if(str[k]!=' '&& str[k]!='\0')
         {
@@ -21,6 +21,7 @@ int main()
         }
     }
     
+    str1[i][j]='\0';
     len=i+1;
     
     strcpy(small,str1[0]);
@@ -30,11 +31,15 @@ int main()
         if(strlen(large)<strlen(str1[k]))
             strcpy(large,str1[k]);
     }
-    
-    printf("largest word in the gien string is %s\n",large);
+    for(k=0;large[k]!='\0';k++){
+        count++;
+    }
+    printf("largest word in the gien string is : %s\n",large);
+    printf("length of the largest word ina given string is : %d",count);
 }
 
 output:
 
 enter string:i am working at thundersoft
 largest word is thundersoft
+length of the largest word ina given string is : 11
