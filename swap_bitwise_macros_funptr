@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+#define c a^b
+
+void swap(int a,int b)
+{
+    printf("a value before swapping:%d\n",a);
+    printf("b value before swapping:%d\n\n",b);
+    a=c;
+    b=c;
+    a=c;
+    printf("a value after swapping:%d\n",a);
+    printf("b value after swapping:%d\n",b);
+}
+
+int main()
+{
+    int a=10;
+    int b=20;
+    void (*fun) (int,int);
+    fun=swap;
+    fun(a,b);
+}
+
+output:
+
+a value before swapping:10
+b value before swapping:20
+
+a value after swapping:20
+b value after swapping:10
