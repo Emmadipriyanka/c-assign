@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str1[50][50],small[50],large[50];
+    int i=0,j=0,k,len;
+    char str[50];
+    printf("enter string:");
+    fgets(str,50,stdin);
+    for(k=0;str[k]!='\0';k++){
+        if(str[k]!=' '&& str[k]!='\0')
+        {
+            str1[i][j++]=str[k];
+        }
+        else
+        {
+            str1[i][j]='\0';
+            i++;
+            j=0;
+        }
+    }
+    
+    len=i+1;
+    
+    strcpy(small,str1[0]);
+    strcpy(large,str1[0]);
+    
+    for(k=0;k<len;k++){
+        if(strlen(large)<strlen(str1[k]))
+            strcpy(large,str1[k]);
+    }
+    
+    printf("largest word in the gien string is %s\n",large);
+}
+
+output:
+
+enter string:i am working at thundersoft
+largest word is thundersoft
