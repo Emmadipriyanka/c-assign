@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    char arr[]="10 11 01 00";
+    printf("%ld\n",sizeof(arr));
+    printf("before shifting alternative elements:");
+    for(int i=0;i<12;i++)
+    {
+        printf("%c",arr[i]);
+    }
+    for(int i=0;i<12/2;i++)
+    {
+        if(arr[i]!=32)
+        {
+            int temp=arr[i];
+            arr[i]=arr[i+6];
+            arr[i+6]=temp;
+        }
+    }
+    printf("\nafter shifting alternative elements:");
+    for(int i=0;i<12;i++)
+    {
+        printf("%c",arr[i]);
+    }
+    return 0;
+}
+
+
+output:
+
+12
+before shifting alternative elements:10 11 01 00
+after shifting alternative elements:01 00 10 11
