@@ -1,16 +1,16 @@
-//#include<conio.h>
+
 #include<stdio.h>
 #include<string.h>
 int main()
 {
  char string[50]="i work at thundersoft", longest[30];
- int count = 0, max = 0,i,j,index=0,length;
+ int count = 0, max = 0,i,j=0,index=0,length;
  //clrscr();
 
  length = strlen(string);
  index=0;
  /* Finding length of longest word and starting index */
- for( i = 0 ; i< length ; i++)
+ for( i = 0 ; i<=length ; i++)
  {
   if(string[i] != ' ' && string[i]!='\0')
   {
@@ -26,14 +26,6 @@ int main()
    count = 0;
   }
  }
- /* Checking if last word is longest */
- if(count>max)
- {
-  max = count;
-  index = length-max;
- }
- /* Using length and index copying longest word */
- j=0;
  for(i=index;i< index+max;i++)
  {
   longest[j] = string[i];
@@ -46,9 +38,3 @@ int main()
  //getch();
  return 0;
 }
-
-
-output:
-
-Longest word is: thundersoft
-And its length is: 11
