@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+int concat(char *p1,char *p2)
+{
+    int i=0;
+    int len=strlen(p1);
+    for(i=0;p2[i]!='\0';i++){
+        p1[len+i]=p2[i];
+    }
+}
+
+int main()
+{
+    char s[50],ss[50];
+    char *ptr=s,*ptrr=ss;
+    printf("enter first string:");
+    scanf("%s",s);
+    printf("enter second string:");
+    scanf(" %s",ss);
+    int (*fun) (char *,char *)=concat;
+    fun(ptr,ptrr);
+    printf("concatenated string: %s",ptr);
+}
+
+output:
+
+enter first string:priyanka
+enter second string:kukkapilla
+concatenated string: priyanka kukkapilla
