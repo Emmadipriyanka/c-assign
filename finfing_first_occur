@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int occ(char *arr)
+{
+    int i, flag=0;
+    char ch;
+    int len=strlen(arr);
+    printf("enter the char to search:");
+    scanf(" %c",&ch);
+    for(i=0;i<len;i++)
+    {
+       if(arr[i]==ch)
+       {
+           flag++;
+           break;
+       }
+    }
+   (flag>0)?printf("%c char is found at %d pos",ch,i):printf("char is not found");
+}
+int main()
+{
+    char *ptr=(char *)malloc(100*sizeof(char));
+    printf("enter the string:");
+    scanf("%s",ptr);
+    int (*fptr)(char *);
+    fptr=occ;
+    fptr(ptr);
+    
+}
+
+output:
+
+enter the string:priyanka
+enter the char to search:r
+r char is found at 1 pos
