@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main(){
+    int a=53,pos1=3,pos2=1;
+    int num=a|(1<<pos1);
+    int n=a|(1<<pos2);
+    int res=num|n;
+    printf("%d\n",res);
+}
