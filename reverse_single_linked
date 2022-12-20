@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node{
+        int data;
+        struct node *next;
+}*head;
+
+void create(){
+        struct node *newnode,*temp;
+        head=NULL;
+        int choice;
+        while(choice){
+                newnode=malloc(sizeof(struct node));
+                printf("enter data:");
+                scanf("%d",&newnode->data);
+                newnode->next=NULL;
+                if(head==NULL)
+                        temp=head=newnode;
+                else{
+                        temp->next=newnode;
+                        temp=newnode;
+                }
+                printf("1->continue  0->exit:");
+                scanf("%d",&choice);
+        }
+}
+
+void reverse()
+{
+    struct node *nextnode,*prevnode,*current;
+    prevnode=NULL;
+    current=nextnode=head;
+    while(nextnode!=NULL)
+    {
+        nextnode=nextnode->next;
+        current->next=prevnode;
+        prevnode=current;
+        current=nextnode;
+    }
+    head=prevnode;
+}
+void display()
+{
+        struct node *temp;
+        temp=head;
+        if(temp==NULL)
+                printf("empty list");
+        while(temp!=NULL)
+        {
+                printf("%d  ",temp->data);
+	        	temp=temp->next;
+        }
+}
+
+int main()
+{
+        create();
+        printf("linked list elements are:");
+        display();
+        reverse();
+        printf("\nthe reverse of an linked list is:");
+        display();
+}
+
+output:
+
+enter data:4
+1->continue  0->exit:1
+enter data:8
+1->continue  0->exit:1
+enter data:3
+1->continue  0->exit:0
+linked list elements are:4  8  3  
+the reverse of an linked list is:3  8  4 
