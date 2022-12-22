@@ -1,0 +1,16 @@
+#include <stdio.h>
+int fun(int n[], int l)
+{
+    int i,r=0;
+    for(i=0;i<l;i++)
+
+        r=r^n[i];
+    return r;
+}
+int main()
+{
+    int n[]={1,2,1,5,2};
+    int l=sizeof(n)/sizeof(n[0]);
+    printf("%d\n",l);
+    printf("%d\n",fun(n,l));
+}
