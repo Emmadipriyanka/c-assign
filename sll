@@ -1,0 +1,106 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *link;
+};
+void main()
+{
+	int pos,ch,p;
+	struct node *head=NULL,*temp,*newnode,*prevnode,*nextnode;
+	do
+	{
+		newnode=(struct node*)malloc(sizeof(struct node));
+		printf("\n enter data:");
+		scanf("%d",&newnode->data);
+		newnode->link=NULL;
+		if(head==NULL)
+			head=temp=newnode;
+		else
+		{
+			temp->link=newnode;
+			temp=newnode;
+		}
+		printf("\n Do you want to continue(1/0):");
+		scanf("%d",&ch);
+	}
+	while(ch==1);
+	temp=head;
+	printf("\n the ingle linked list:");
+	while(temp!=NULL)
+	{
+		printf("%d->",temp->data);
+		temp=temp->link;
+	}
+	do
+	{
+		printf("\n enter your choice:1.begining 2.at any position 3.ending 4.display 5.beg_delete 6.pos_delete 7.end_delete 8.exit");
+		scanf("%d",&p);
+		newnode=(struct node*)malloc(sizeof(struct node));
+		newnode->link=NULL;
+		switch(p)
+		{
+			case 1:printf("\n enter data");
+			       scanf("%d",&newnode->data);
+			       newnode->link=head;
+			       head=newnode;
+			       break;
+			case 2:printf("\n enterthe position ");
+			      scanf("%d",&pos);
+			      printf("\n enter the data");
+			      scanf("%d",&newnode->data);
+			      temp=head;
+			      for(int i=1;i<pos-1;i++)
+				      temp=temp->link;
+			      newnode->link=temp->link;
+			      temp->link=newnode;
+			      break;
+			 case 3:printf("\n enter the data");
+			       scanf("%d",&newnode->data);
+			       temp=head;
+			       while(temp->link!=NULL)
+			            temp=temp->link;
+			       temp->link=newnode;
+			       break;
+			 case 4:
+			        temp=head;
+	                printf("\n the ingle linked list:");
+	                while(temp!=NULL)
+	                {
+		                printf("%d->",temp->data);
+		                temp=temp->link;
+	                }
+	                break;
+	         case 5:
+	                temp=head;
+	                head=temp->link;
+	                break;
+	         case 6:
+	                printf("\n enterthe position ");
+			        scanf("%d",&pos);
+			        temp=head;
+			        for(int i=1;i<pos-1;i++){
+						temp=temp->link;
+			        }
+			       nextnode=temp->link;
+			       temp->link=nextnode->link;
+				    break;
+			case 7:
+			        temp=head;
+			        while(temp->link!=NULL)
+			        {
+			            prevnode=temp;
+			            temp=temp->link;
+			        }
+			        if(head==temp)
+			            head=NULL;
+			         else
+			            prevnode->link=NULL;
+			         break;
+			 case 8:
+			        exit;
+		}
+	}
+	while(p!=8);
+}
