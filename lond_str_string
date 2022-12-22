@@ -1,0 +1,59 @@
+#include<stdio.h>
+int main()
+{
+    char arr[] = " ##@^%&^$E$ Ikvbnmjhgfdsaqwer&  *#tyuioplkjhhjjjjjjjjjjj likej telligencefrfggt than beahjhjkhjyy ";
+    int arrlen;
+    //for(arrlen=0;arr[arrlen]!='\0';arrlen++);
+    char cop[50];
+    char res[50];
+    res[0]='\0';
+    int arraycnt=0;
+     int c=0;
+    for(int i=0;i<arrlen+1;i++)
+    {
+        if (arr[i] != ' ')
+        {   
+            
+            cop[arraycnt] = arr[i];
+            arraycnt++;
+        }
+        if (arr[i]==' ' || arr[i] == '\0')
+        {
+            
+            cop[arraycnt] ='\0';
+            int cnt;
+            int j;
+            
+            for( j=0;cop[j]!='\0';j++);
+               //printf("%d j ",j);
+            for(cnt=0;res[cnt]!='\0';cnt++);
+               //printf("%d in",cnt);
+            if (j>cnt)
+            {
+                res[0]='\0';
+                
+                for(int l=0;cop[l]!='\0';l++)
+                {
+                    res[l]= cop[l];
+                    c=l;
+                }
+                 res[c+1]='\0';
+                
+            }
+           
+            
+            cop[0] = '\0';
+            cnt=0;
+            j=0;
+            c=0;
+            arraycnt=0;
+                
+
+        }
+        
+    }
+    for(int z=0;res[z]!='\0';z++)
+    {
+        printf("%c",res[z]);
+    }
+}
