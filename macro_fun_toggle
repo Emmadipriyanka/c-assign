@@ -1,0 +1,7 @@
+#include<stdio.h>
+#define toggle(n,i,j) j=n^(1<<i); printf("%d",j);
+int main()
+{
+    int n,i,j;
+    toggle(9,2,j);
+}
