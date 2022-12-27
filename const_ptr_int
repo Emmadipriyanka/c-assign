@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{
+    int a=10;
+    int * const ptr=&a;
+    int b=66;
+    ptr=&b;
+}
