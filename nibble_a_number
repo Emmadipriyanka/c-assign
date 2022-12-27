@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+    int num=5;
+    int i=num<<4;
+    int j=num>>4;
+    int k=i|j;
+    printf("%d",k);
+}
