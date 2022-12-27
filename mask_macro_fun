@@ -1,0 +1,8 @@
+#include<stdio.h>
+#define mask(n,pos,bits,j) j=((n>>(pos-1)) & ((1<<bits)-1))
+int main()
+{
+    int n,pos,bits,j;
+    mask(10,2,3,j);
+    printf("%d",j);
+}
