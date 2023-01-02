@@ -1,0 +1,12 @@
+#include<stdio.h>
+//#pragma pack(1)
+struct priya{
+    char a;
+    int b;
+    char c;
+}__attribute__((packed));
+int main()
+{
+    struct priya pri;
+    printf("%ld",sizeof(pri));
+}
