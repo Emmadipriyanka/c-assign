@@ -1,0 +1,7 @@
+#include<stdio.h>
+int main()
+{
+    unsigned int a=12345678;
+    char *r=(char *)&a;
+    (*r==78)?printf("little endian"):printf("big endian");
+}
