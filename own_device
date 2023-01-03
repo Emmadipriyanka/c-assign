@@ -1,0 +1,45 @@
+#include<linux/module.h>
+#include<linux/types.h>
+#include<linux/init.h>
+#include<linux/kernel.h>
+#include<linux/fs.h>
+#include <linux/kdev_t.h>
+#include <linux/err.h>
+#include <linux/device.h>
+
+dev_t my_dri=0;
+
+static struct class *my_class;
+
+static int __init dynamic_own(void)
+{
+	if(alloc_chrdev_region(&my_dri,0,1,"priya")<0)
+		printk("driver not register");
+	printk("major=%d  minor=%d",MAJOR(my_dri),MINOR(my_dri));
+	
+	my_class=class_create(THIS_MODULE,"pri");
+	
+	if(IS_ERR(my_class))
+		printk(KERN_INFO"class is not created ");
+	printk(KERN_INFO"class is created successfully");
+	
+	if(IS_ERR(device_create(my_class,NULL,my_dri,NULL,"pri")))
+		printk(KERN_INFO"device is not created");
+	printk(KERN_INFO"device created successfully");
+	return 0;
+}
+
+void my_exit(void)
+{
+	class_destroy(my_class);
+	device_destroy(my_class,my_dri);
+	unregister_chrdev_region(my_dri,1);
+	printk(KERN_INFO"existing from dynamic loading");
+}
+
+MODULE_VERSION("1:0.0");
+MODULE_LICENSE("GPL");
+
+module_init(dynamic_own);
+module_exit(my_exit);
+
