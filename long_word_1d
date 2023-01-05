@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[20]="my name is priyanka";
+    char lar[20];
+    int len=strlen(str);
+    int count=0,max=0,index=0,j=0;
+    for(int i=0;i<=len;i++)
+    {
+        if(str[i]!=32 && str[i]!='\0')
+        {
+            count++;
+        }
+        else{
+        if(count>max){
+            max=count;
+            index=i-count;
+        }
+        count=0;
+        }
+    }
+    for(int i=index;i<index+max;i++){
+        lar[j]=str[i];
+        j++;
+    }
+    lar[j]='\0';
+    printf("largest word:%s\n",lar);
+    printf("length of lar is:%d",max);
+}
