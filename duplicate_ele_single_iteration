@@ -20,3 +20,6 @@ int main()
 
 
 here for traversing we required hashmap but arr has its own length so arr is enough to traverse
+
+time complexity: O(n)
+space complexity : O(1)
