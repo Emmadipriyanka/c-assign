@@ -17,3 +17,6 @@ int main()
 	}
 	return 0;
 }
+
+
+here for traversing we required hashmap but arr has its own length so arr is enough to traverse
