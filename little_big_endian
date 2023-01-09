@@ -1,0 +1,7 @@
+#include<stdio.h>
+int main()
+{
+    int a=12345678;
+    char *ptr=(char *)&a;
+    (*ptr=78)?printf("little endian"):printf("big endian");
+}
