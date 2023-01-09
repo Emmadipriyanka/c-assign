@@ -1,0 +1,24 @@
+vvvv#include<stdio.h>
+
+void own_mem_cpy(char des[],char src[],int b)
+{
+    char *ptr1=des;
+    char *ptr2=src;
+    int i=0;
+    for(i=0;i<b;i++)
+    {
+        ptr1[i]=ptr2[i];
+    }
+    ptr1[i]='\0';
+    printf("%s\n",ptr1);//directly printing the string
+    for(int i=0;ptr1[i]!='\0';i++)
+    {
+        printf("%c",ptr1[i]);//for loop for printing the each character in a string
+    }
+}
+int main()
+{
+    char src[50]="my name is priyanka";
+    char des[50];
+    own_mem_cpy(des,src,sizeof(char)*13);
+}
