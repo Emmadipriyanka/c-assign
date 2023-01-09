@@ -1,0 +1,7 @@
+#include<stdio.h>
+#define size(x) (char *)(&x+1) - (char *)(&x)
+int main()
+{
+    char *x;
+    printf("%ld",size(x));
+}
