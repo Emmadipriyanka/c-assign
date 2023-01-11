@@ -1,0 +1,42 @@
+#include<stdio.h>
+#define len 5
+int top=-1;
+int stack[len];
+void push()
+{
+    if(top==(len-1))
+        printf("stack overflow");
+    else{
+    int num;
+    printf("enter number");
+    scanf("%d",&num);
+    top++;
+    stack[top]=num;
+    }
+}
+void pop()
+{
+    int item;
+    if(top==-1)
+        printf("empty stack");
+    else{
+        item=stack[top];
+        top--;
+        printf("deleted item is : %d\n",item);
+    }
+}
+void display()
+{
+    for(int i=top;i>=0;i--)
+        printf("%d",stack[i]);
+}
+int main()
+{
+    push();
+    push();
+    push();
+    push();
+    push();
+    pop();
+    display();
+}
