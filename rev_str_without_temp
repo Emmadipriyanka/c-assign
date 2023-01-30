@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[20],str1[20];
+    int j=0;
+    fgets(str,20,stdin);
+    int len=strlen(str);
+    for(int i=0;i<len;i++)
+    {
+        str1[j]=str[len-i-1];
+        j++;
+    }
+    printf("string after reverse is:");
+    for(int i=0;i<len;i++)
+        printf("%c",str1[i]);
+}
