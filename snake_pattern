@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   int n,r;
+   printf("enter n value:");
+   scanf("%d",&n);
+   printf("enter r value:");
+   scanf("%d",&r);
+   for(int i=0;i<r;i++){
+       if(i==0){
+            printf("%d  ",n);//2 spaces
+            n=n-1;
+            printf("%d",n);
+            printf("\n");
+       }
+       else if(i%2!=0){
+           for(int j=i;j>0;j--)////to print spaces before row numbers
+                printf("  ");//2 spaces
+            n=n-1;
+            printf("%d   ",n);//3spaces
+            n=n-1;
+            printf("%d",n);
+            printf("\n");
+       }
+       else{
+            for(int j=i;j>0;j--)//to print spaces before row numbers
+                printf("  ");//2 spaces
+            n=n-1;
+            printf("%d   ",n);//3 spaces
+            n=n-1;
+            printf("%d",n);
+            printf("\n");
+       }
+   }
+}
