@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[20];
+    printf("enter string:");
+    fgets(s,20,stdin);
+    int len=strlen(s);
+    int count=0;
+    for(int i=0;i<len/2;i++){
+        if(s[i]==s[len-i-1])
+            count++;
+    }
+    (count==(len/2))?printf("string  is palindrome"):printf("string is not a palindrome");
+}
