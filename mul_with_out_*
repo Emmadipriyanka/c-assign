@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    int a=5,b=6;
+    int c=0;
+    while(a){
+        c=c+b;
+        a--;
+    }
+    printf("%d",c);
+}
