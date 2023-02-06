@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+    int a=12345678;
+    char *r=(char *)&a;
+    if(*r==78)
+        printf("little endian");
+    else
+        printf("big endian");
+}
