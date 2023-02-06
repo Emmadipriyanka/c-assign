@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    int n,bit;
+    printf("enter number:");
+    scanf("%d",&n);
+    printf("enter bit to toggle:");
+    scanf("%d",&bit);
+    int m=n^(1<<bit);
+    printf("number after toggle is %d",m);
+}
