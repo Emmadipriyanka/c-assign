@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<stdlib.h>
+int cdd(a,b){
+    int c=(a&b)<<1;
+    int r=a^b;
+    if(c==0)
+        return r;
+    else
+        cdd(c,r);
+}
+int main()
+{
+    int a=99,b=33;
+    printf("%d",cdd(a,b));
+}
