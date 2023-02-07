@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    int a=100,b=45,r;
+    while(b){
+        if(b&1)
+            r+=a;
+        a=a<<1;
+        b=b>>1;
+    }
+    printf("%d",r);
+}
