@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+char rev (char str[],int len,int i)
+{
+    char temp;
+    if(i<(len/2)){
+        temp=str[i];
+        str[i]=str[len-i-1];
+        str[len-i-1]=temp;
+        rev(str,len,i+1);
+    }
+    if(i==(len/2))
+    {
+      printf("%s",str);
+      return 0;
+    }
+}
+int main(){
+    char str[]="priyanka";
+    int len=strlen(str);
+    int i=0;
+    rev(str,len,i);
+}
