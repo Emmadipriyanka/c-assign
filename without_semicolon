@@ -1,0 +1,18 @@
+#include<stdio.h>
+#define priya printf("pinky")
+int main()
+{
+    char s[]="priyanka";
+    // if(priya)
+    //      return 0;
+    // while((printf("priyanka")))
+    //     return 0;
+    for(printf("pinky\n");printf("pinky\n");/*printf("pinky")*/)
+         return 0;
+    // switch(printf("priyanka"))
+    // {
+        
+    // }
+    //if(printf("priyanka"))
+     //   return 0;
+}
