@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main()
+{
+    int d=0X1234,c;
+    c=((d&0X00ff)<<8)|((d&0Xff00)>>8);
+    printf("0X%x",c);
+
+    return 0;
+}
