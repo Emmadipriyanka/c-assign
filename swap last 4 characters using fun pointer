@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+ void fun1(char str[],int len)
+ {
+     for(int i=0;i<2;i++)
+    {
+        int temp=str[len-4+i];
+        str[len-4+i]=str[len-1-i];
+        str[len-1-i]=temp;
+    }
+    printf("%s",str);
+ }
+int main()
+{
+  
+    char str[]="priyanka";
+    int len=strlen(str);
+    void (*fun) (char [],int)=fun1;
+    fun(str,len);
+}
