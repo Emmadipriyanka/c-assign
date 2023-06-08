@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{
+    char *str="priyanka";
+    int c=printf("%s",str);
+    
+    printf("length of the string is:%d",c);
+}
