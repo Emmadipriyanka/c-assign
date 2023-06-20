@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+    int n=18;
+    int clear=n&1<<4;
+    int set=n|1<<0;
+    int c=clear^set;
+    printf("%d",c);
+}
