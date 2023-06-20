@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char sub[5],str[10];
+    scanf("%s",str);
+    scanf("%s",sub);
+    int c=0,len=0;
+    for(int i=0;sub[i]!='\0';i++)
+        len++;
+    for(int i=0,j=0;str[i]!='\0';i++)
+    {
+        if(str[i]==sub[j]){
+            c++;
+            j++;
+        }
+    }
+    if(c==len)
+        printf("sub string is present in a given string");
+    else
+        printf("sub string is not present in given string");
+}
