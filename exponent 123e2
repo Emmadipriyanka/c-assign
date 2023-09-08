@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+  int a = 123e5;
+  int b = 234E3;
+  printf("%d  %d",a,b);
+}
+
+output:
+
+12300000
+234000
