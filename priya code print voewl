@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+    char str[20] = " eye abhi eye ikora";
+    char str1[10];
+    int j=0,k=0,len=0;
+    for(int i=0;str[i]!='\0';i++){
+            if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == ' '){
+                    if(str[i] == ' ' || (str[i+1] == 'a' || str[i+1] == 'e' || str[i+1] == 'i' || str[i+1] == 'o' || str[i+1] == 'u')){
+                        for(int k=i+1;(str[k] != ' ' && str[k]!= '\0');k++){
+                            len++;
+                        }
+                        if(str[len+i] == 'a' || str[len+i] == 'e' || str[len+i] == 'i' || str[len+i] == 'o' || str[len+i] == 'u'){
+                            for(int l=i+1;l<=(len+i+1);l++){
+                                str1[j] = str[l];
+                                j++;
+                            }
+                            //str1[j] = ' ';
+                            len=0;
+                        }
+                    }
+                }
+    }
+    str1[j] = '\0';
+    for(int i=0;str1[i] != '\0';i++){
+        printf("%c",str1[i]);
+    }
+}
