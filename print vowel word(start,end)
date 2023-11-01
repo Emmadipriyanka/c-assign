@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+bool check_oval(char data)
+{
+    if (data == 'a' || data == 'e' || data == 'i' || data == 'o' || data == 'u' ||
+        data == 'A' || data == 'E' || data == 'I' || data == 'O' || data == 'U') {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+void check_sent(char sent[500])
+{
+    unsigned int i = 0, start_pos;
+    bool oval;
+    while(sent[i] != '\0') {
+        oval = check_oval(sent[i]);
+        start_pos = i;
+        if (oval) {
+            while(sent[i] != '\0' && sent[i] != ' ') {
+                i++;
+            }
+            oval = check_oval(sent[i - 1]);
+            if(oval) {
+                while(sent[start_pos] != '\0' && sent[start_pos] != ' ') {
+                    printf("%c", sent[start_pos]);
+                    start_pos++;
+                }
+                printf("\n");
+            }
+        }
+        else {
+            while(sent[i] != '\0' && sent[i] != ' ') {
+                i++;
+            }
+            if(sent[i] != '\0') {
+                i++;
+            }
+        }
+    }
+}
+
+int main()
+{
+    char sent[500];
+    printf("Enter intput sentance\n");
+    scanf("%[^\n]s", sent);
+    check_sent(sent);
+
+    return 0;
+}
