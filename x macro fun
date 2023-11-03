@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Input 
+{
+	char s1[10];
+	char s2[10];
+};
+/*enum Manipulations
+{
+	STRLEN=1,
+	STRCPY,
+	STRCMP,
+	//DETAILS,
+};*/
+
+void my_strlen(struct Input ip)
+{
+	int i;
+	for(i=0;ip.s1[i];i++);
+	printf("%d",i);
+}
+
+void my_strcpy(struct Input ip)
+{
+	int i;
+	for(i=0;ip.s1[i];i++)
+	{
+		ip.s2[i] = ip.s1[i];
+	}
+	ip.s2[i]='\0';
+	printf("%s\n",ip.s1);
+	printf("%s\n",ip.s2);
+}
+void my_strcmp(struct Input ip)
+{
+	int i;
+	while(ip.s1[i] && ip.s2[i] && (ip.s1[i] == ip.s2[i]))
+		i++;
+	if(ip.s2[i]!=ip.s1[i])
+		printf("Both srtings are different\n");
+	else
+		printf("Both are equal\n");
+}
+void details(struct Input ip)
+{
+	printf("%s\n",ip.s1);
+	printf("%s\n",ip.s2);
+}
+#define PRIYA\
+	x(STRLEN,my_strlen)\
+	x(STRCPY,my_strcpy)\
+	x(STRCMP,my_strcmp)
+
+enum index{
+	#define x(value,fun) value,
+		PRIYA
+	#undef x
+	};
+
+void (*fun[3])(struct Input ip) = {
+	#define x(value,fun) fun,
+		PRIYA
+	#undef x
+	};
+int main()
+{
+	struct Input ip;
+	int op;
+	//enum Manipulations op;
+	//void (*fp[4])(struct Input ip) = {my_strlen, my_strcpy, my_strcmp, details};
+	printf("Enter choice:");
+	scanf("%d",&op);
+	printf("enter string : ");
+	scanf("%s",&ip.s1);
+	(*fun[op])(ip);
+}
