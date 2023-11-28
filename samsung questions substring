@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    int n,count =0,m=10;
+    char *b,*r;
+    printf("enter n value : ");
+    scanf("%d",&n); 
+    char s3[5][10];
+    printf("enter strings : ");
+    for(int i=0;i<n;i++)
+        scanf("%s",&s3[i]);
+    for(int i=0;i<n;i++){
+        int j=0;
+        if(s3[i][j] == 'a'){
+            b=strchr(s3[i],'b');
+            if(b != NULL){
+                r=strstr(s3[i],"ba");
+                if(r != NULL)
+                    r = NULL;
+                else
+                    count++;
+            }
+        }
+    }
+    printf("%d",count);
+}
+
+
+output:
+
+enter n value : 5
+enter strings : aaaabbbbb
+bbbbb
+aaaaaa
+baaaaaaa
+abbbbaaa
+1
