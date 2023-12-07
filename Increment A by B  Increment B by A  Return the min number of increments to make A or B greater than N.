@@ -1,1 +1,12 @@
-samsung questions substring
+#include<stdio.h>
+int main(){
+    int a=4,b=4,n=20,count=0;
+    while(a<=n){
+        if(b!=0){
+           a += b++;
+           count++;
+           b--;
+        }
+    }
+    printf("%d",count);
+}
